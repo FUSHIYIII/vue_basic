@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识vue</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+    <!--
+        初识vue：
+        1.想让vue工作，就必须创建一个vue实例，且要传入一个配置对象；
+        2.root容器里面的代码依然符合html规范，要加入vue的一些特殊语法；
+        3.root容器里面的代码被称为「vue模板」
+        4.Vue实例和容器是一一对应的；
+        5.真实开发环境中只有一个Vue实例，并且配合着组建一起使用；
+        6.{{xxx}}中的xxx要写js表达式，且xxx可以自动读取到data中的所有属性；
+        7.一旦data中的数据发生改变，那么页面中用到的该数据也会自动更新；
+        注意区分：js表达式和js代码
+            1.表达式：一个表达式会产生一个值，可以放在任何一个需要值的地方；
+            2.js代码（js语句），例如if，for语句等等
+               
+    -->
+
+    <!--先准备好一个容器-->
+    <div id="root">
+        <h1>hello,{{name}}</h1>
+    </div>
+    </body>
+   <script type="text/javascript" >
+    Vue.config.productionTip = false//阻止vue在启动时生成生产提示
+
+    //创建vue实例
+    const x = new Vue({
+        el:'#root',//el用于指定当前Vue实例为那个容器服务，值通常为css选择器字符串
+        data:{//date中用于储存数据，数据供el所指定的容器去使用，值我们暂时先写成一个对象
+            name:'尚硅谷'
+        }
+    })
+   </script>
+</body>
+</html>
